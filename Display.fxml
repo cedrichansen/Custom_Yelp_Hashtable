@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="709.0" prefWidth="1200" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
-        <Button onAction="#search" layoutX="434.0" layoutY="622.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="333.0" text="Search" >
+        <Button layoutX="434.0" layoutY="622.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="333.0" text="Search">
          <font>
             <Font size="14.0" />
          </font></Button>
@@ -22,15 +22,12 @@
          <font>
             <Font name="System Bold" size="19.0" />
          </font></Label>
-        <TableView fx:id="MainTable" editable="true" layoutX="25.0" layoutY="60.0" prefHeight="478.0" prefWidth="1150.0" tableMenuButtonVisible="true">
+        <TableView fx:id="table" editable="true" layoutX="25.0" layoutY="60.0" prefHeight="478.0" prefWidth="1150.0" tableMenuButtonVisible="true">
             <columns>
-                <TableColumn minWidth="-Infinity" prefWidth="183.36223793029785" text="Business name" />
-                <TableColumn prefWidth="110.58377075195312" text="City" />
-                <TableColumn prefWidth="217.5166015625" text="Address" />
-                <TableColumn prefWidth="628.2950439453125" text="Categories" />
+                <TableColumn fx:id="businessName" minWidth="-Infinity" prefWidth="183.36223793029785" text="Business name" />
+                <TableColumn fx:id="city" prefWidth="110.58377075195312" text="City" />
+                <TableColumn fx:id="categories" prefWidth="854.0" text="Categories" />
             </columns>
         </TableView>
     </children>
 </AnchorPane>
-
-

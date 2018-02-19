@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class HashTable {
 
-    LinkedList [] table;
+    LinkedList<YelpData> [] table;
 
     public HashTable(int size) {
 
@@ -54,7 +54,7 @@ public class HashTable {
         for (int i = 0; i<this.table.length; i++) {
             if (this.table[i] != null) {
                 for (int j = 0; j < this.table[i].size(); j++) {
-                    biggerHT.add((YelpData) this.table[i].get(j), biggerHT);
+                    biggerHT.add(this.table[i].get(j), biggerHT);
                 }
             }
         }

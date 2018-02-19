@@ -39,7 +39,7 @@ public class Main extends Application{
             for (int i = 0; i<ht.table.length; i++) {
                 if (ht.table[i]!=null){
                     for (int j = 0; j<ht.table[i].size();j++){
-                        YelpData a = (YelpData)ht.table[i].get(j);
+                        YelpData a = ht.table[i].get(j);
 
                         if (a.name != y.name){
                             double similarity = y.getSimilarity(a);
@@ -74,7 +74,7 @@ public class Main extends Application{
             for (int i = 0; i<ht.table.length; i++) {
                 if (ht.table[i]!=null){
                     for (int j = 0; j<ht.table[i].size();j++){
-                        YelpData a = (YelpData)ht.table[i].get(j);
+                        YelpData a = ht.table[i].get(j);
                         if (a.name != y.name){
                             double similarity = y.getSimilarity(a);
                             if (similarity < best.similarity){
@@ -110,7 +110,7 @@ public class Main extends Application{
                 if (ht.contains(y, ht)){
                     for (int a = 0; a<t.size(); a++) {
                         if (y.name.equals(t.get(a).name)) {
-                            ya = (YelpData)ht.table[num].get(a);
+                            ya = ht.table[num].get(a);
                         }
                     }
 
@@ -132,23 +132,7 @@ public class Main extends Application{
             System.out.println("Type element you would like to see: ");
             command = kb.nextLine();
         }
-
-
     }
-/*
-    public static ArrayList<YelpData> getAllBusinesses(HashTable ht){
-        ArrayList<YelpData> businesses = new ArrayList<>();
-
-        for (int i = 0; i<ht.table.length; i++) {
-            if (ht.table[i] != null) {
-                for (int j = 0; j < ht.table[i].size(); j++) {
-                    businesses.add((YelpData)ht.table[i].get(j));
-                }
-            }
-        }
-        return businesses;
-    }
-*/
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -162,7 +146,7 @@ public class Main extends Application{
 
 
     public static void main(String [] args) {
-
+        /*
         ReadJson r = new ReadJson();
 
         HashTable good = r.readToHash("business.json");
@@ -170,6 +154,7 @@ public class Main extends Application{
         System.out.println("\nAll businesses have sucessfully been added, and table successfully resized! \n");
 
         getInput(good);
+        */
 
         launch(args);
 

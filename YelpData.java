@@ -22,6 +22,29 @@ public class YelpData {
 
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public float getLattitude() {
+        return lattitude;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public double getSimilarity() {
+        return similarity;
+    }
 
     public String getCategories(){
         String c = "";
