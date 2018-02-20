@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class HashTable {
 
-    LinkedList<YelpData> [] table;
+    LinkedList<YelpData>[] table;
 
     public HashTable(int size) {
 
@@ -15,7 +15,6 @@ public class HashTable {
     public YelpData add(YelpData y, HashTable ht) {
 
         int hash = y.hashify(ht);
-
 
         if (this.table[hash] == null) {
             LinkedList<YelpData> ll = new LinkedList<>();
@@ -31,36 +30,33 @@ public class HashTable {
     public boolean contains(YelpData y, HashTable ht) {
         int hash = y.hashify(ht);
         String name = y.name;
-        ArrayList<YelpData> temp = new ArrayList<>();
 
-
-        if (ht.table[hash] == null){
+        if (ht.table[hash] == null) {
             return false;
         }
 
-        temp.addAll(ht.table[hash]);
-        for (int i = 0; i<temp.size(); i++) {
-            if (temp.get(i).name.equals(name)){
+        for (YelpData yd : ht.table[hash]){
+            if (yd.name.equals(name)){
                 return true;
             }
         }
+
         return false;
     }
 
 
     public HashTable resize() {
         int slots = this.table.length;
-        HashTable biggerHT = new HashTable(slots*2);
+        HashTable biggerHT = new HashTable(slots * 2);
 
-        for (int i = 0; i<this.table.length; i++) {
+        for (int i = 0; i < this.table.length; i++) {
             if (this.table[i] != null) {
-                for (int j = 0; j < this.table[i].size(); j++) {
-                    biggerHT.add(this.table[i].get(j), biggerHT);
+                for (YelpData y : this.table[i]) {
+                    biggerHT.add(y, biggerHT);
                 }
             }
         }
         return biggerHT;
     }
-
 
 }

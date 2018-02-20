@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="771.0" prefWidth="1200" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane prefHeight="771.0" prefWidth="1200" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
-        <Button fx:id="searchButton" layoutX="52.0" layoutY="585.0" mnemonicParsing="false" onAction="#search" prefHeight="28.0" prefWidth="333.0" text="Search">
+        <Button fx:id="searchButton" layoutX="52.0" layoutY="585.0" mnemonicParsing="false" onAction="#search" prefHeight="28.0" prefWidth="333.0" text="Find Similar Businesses">
          <font>
             <Font size="14.0" /></font>
          </Button>
@@ -36,10 +36,15 @@
             <TableColumn fx:id="similarCategories" minWidth="0.0" prefWidth="481.0" text="Categories" />
         </columns>
       </TableView>
-      <Label layoutX="713.0" layoutY="505.0" prefHeight="28.0" prefWidth="163.0" text="Similar Businesses">
+      <Label layoutX="713.0" layoutY="505.0" prefHeight="28.0" prefWidth="176.0" text="Similar Business(es)">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="findMostSimilarButton" layoutX="52.0" layoutY="628.0" mnemonicParsing="false" onAction="#findMostSimilar" prefHeight="27.0" prefWidth="333.0" text="Find Most Similar Business">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

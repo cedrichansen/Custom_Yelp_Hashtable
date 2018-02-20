@@ -63,22 +63,6 @@ public class YelpData {
     }
 
 
-
-    //maybe have param for current hashmap size? look into it and divide by modulo
-    //maybe divide by current hashmap size + 37? look into it
-    public int hashify(){
-
-        int hash = 7;
-        char [] chars = this.name.toCharArray();
-        for (int i =0; i<name.length(); i++) {
-            hash = hash*137 + chars[(i)];
-        }
-
-        return Math.abs(hash) % 25747;
-    }
-
-
-    //use bitwise and instead of modulo
     public int hashify(HashTable ht){
         int size = ht.table.length;
 

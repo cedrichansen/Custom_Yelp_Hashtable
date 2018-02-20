@@ -26,25 +26,20 @@ public class Main extends Application{
             System.out.println("This element does not exist");
             return null;
         } else {
-            ArrayList<YelpData> temp = new ArrayList<>();
-            temp.addAll(ht.table[y.hashify(ht)]);
-
-            for (int i = 0; i<temp.size(); i++){
-                if (y.name.equals(temp.get(i).name)){
-                    y = temp.get(i);
+            for (YelpData yd: ht.table[y.hashify(ht)]){
+                if (y.name.equals(yd.name)){
+                    y = yd;
                 }
             }
 
             ArrayList <YelpData> mostSimilarBusinesses = new ArrayList<>();
             for (int i = 0; i<ht.table.length; i++) {
                 if (ht.table[i]!=null){
-                    for (int j = 0; j<ht.table[i].size();j++){
-                        YelpData a = ht.table[i].get(j);
-
-                        if (a.name != y.name){
-                            double similarity = y.getSimilarity(a);
+                    for (YelpData yd: ht.table[i]){
+                        if (yd.name != y.name){
+                            double similarity = y.getSimilarity(yd);
                             if (similarity < 0.005){
-                                mostSimilarBusinesses.add(a);
+                                mostSimilarBusinesses.add(yd);
                             }
                         }
                     }
@@ -61,27 +56,24 @@ public class Main extends Application{
             System.out.println("This element does not exist");
             return null;
         } else {
-            ArrayList<YelpData> temp = new ArrayList<>();
-            temp.addAll(ht.table[y.hashify(ht)]);
-
-                for (int i = 0; i<temp.size(); i++){
-                    if (y.name.equals(temp.get(i).name)){
-                        y = temp.get(i);
+                for (YelpData yd: ht.table[y.hashify(ht)]){
+                    if (y.name.equals(yd.name)){
+                        y = yd;
                     }
                 }
 
             YelpData best = new YelpData(null, null, null, 0,0 );
             for (int i = 0; i<ht.table.length; i++) {
                 if (ht.table[i]!=null){
-                    for (int j = 0; j<ht.table[i].size();j++){
-                        YelpData a = ht.table[i].get(j);
-                        if (a.name != y.name){
-                            double similarity = y.getSimilarity(a);
-                            if (similarity < best.similarity){
-                                best = a;
+                    for (YelpData yd: ht.table[i]){
+                        if (yd.name != y.name) {
+                            double similarity = y.getSimilarity(yd);
+                            if (similarity <best.similarity){
+                                best = yd;
                             }
                         }
                     }
+
                 }
             }
             return best;
