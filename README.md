@@ -10,5 +10,3 @@ This data is stored using a custom hashtable. Based on each businesses lattitude
 searches, or can find a list of several similar businesses. For example, if a user enters "Subway", which in this dataset is
 in Charlotte, NC, the program will find the best match to Subway, which will be a sandwhich shop in close proximity to that 
 Subway.
-
-Currently working on the GUI configuration.
