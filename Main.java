@@ -138,7 +138,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("display.fxml"));
         primaryStage.setTitle("CSC365 Hw01");
-        primaryStage.setScene(new Scene(root, 1200, 709));
+        primaryStage.setScene(new Scene(root, 1200, 771));
         primaryStage.show();
     }
 

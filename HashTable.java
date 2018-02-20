@@ -32,12 +32,13 @@ public class HashTable {
         int hash = y.hashify(ht);
         String name = y.name;
         ArrayList<YelpData> temp = new ArrayList<>();
-        temp.addAll(ht.table[hash]);
+
 
         if (ht.table[hash] == null){
             return false;
         }
 
+        temp.addAll(ht.table[hash]);
         for (int i = 0; i<temp.size(); i++) {
             if (temp.get(i).name.equals(name)){
                 return true;

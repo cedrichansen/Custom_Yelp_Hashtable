@@ -8,26 +8,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="709.0" prefWidth="1200" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane prefHeight="771.0" prefWidth="1200" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
-        <Button layoutX="434.0" layoutY="622.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="333.0" text="Search">
+        <Button fx:id="searchButton" layoutX="52.0" layoutY="585.0" mnemonicParsing="false" onAction="#search" prefHeight="28.0" prefWidth="333.0" text="Search">
          <font>
-            <Font size="14.0" />
-         </font></Button>
-        <TextField fx:id="field" alignment="CENTER" layoutX="434.0" layoutY="577.0" prefHeight="27.0" prefWidth="333.0" promptText="Enter Business Name">
+            <Font size="14.0" /></font>
+         </Button>
+        <TextField fx:id="searchField" alignment="CENTER" layoutX="52.0" layoutY="541.0" prefHeight="27.0" prefWidth="333.0" promptText="Enter Business Name">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Label layoutX="519.0" layoutY="14.0" prefHeight="44.0" prefWidth="163.0" text="BUSINESS LIST">
+      <Label layoutX="525.0" layoutY="14.0" prefHeight="44.0" prefWidth="150.0" text="BUSINESS LIST">
          <font>
             <Font name="System Bold" size="19.0" />
          </font></Label>
-        <TableView fx:id="table" editable="true" layoutX="25.0" layoutY="60.0" prefHeight="478.0" prefWidth="1150.0" tableMenuButtonVisible="true">
+        <TableView fx:id="table" editable="true" layoutX="25.0" layoutY="60.0" prefHeight="427.0" prefWidth="1150.0" tableMenuButtonVisible="true">
             <columns>
                 <TableColumn fx:id="businessName" minWidth="-Infinity" prefWidth="183.36223793029785" text="Business name" />
                 <TableColumn fx:id="city" prefWidth="110.58377075195312" text="City" />
                 <TableColumn fx:id="categories" prefWidth="854.0" text="Categories" />
             </columns>
         </TableView>
+      <TableView fx:id="similarTable" layoutX="414.0" layoutY="541.0" prefHeight="200.0" prefWidth="761.0">
+        <columns>
+          <TableColumn fx:id="similarName" prefWidth="150.0" text="Business name" />
+          <TableColumn fx:id="similarCity" minWidth="0.0" prefWidth="128.0" text="City" />
+            <TableColumn fx:id="similarCategories" minWidth="0.0" prefWidth="481.0" text="Categories" />
+        </columns>
+      </TableView>
+      <Label layoutX="713.0" layoutY="505.0" prefHeight="28.0" prefWidth="163.0" text="Similar Businesses">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
