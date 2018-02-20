@@ -102,13 +102,4 @@ public class YelpData {
         return score;
     }
 
-
-
-    //get 10 most similar elements --- put this in hashtable class or put array in each yelpdata instance
-    public YelpData[] top10Similar() {
-        YelpData [] top10 = new YelpData[10];
-
-        return top10;
-    }
-
 }

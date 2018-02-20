@@ -80,7 +80,7 @@ public class Main extends Application{
         }
     }
 
-
+/*
     public static void getInput(HashTable ht) {
         Scanner kb = new Scanner(System.in);
 
@@ -124,7 +124,7 @@ public class Main extends Application{
             System.out.println("Type element you would like to see: ");
             command = kb.nextLine();
         }
-    }
+    }*/
 
     @Override
     public void start(Stage primaryStage) throws Exception{
