@@ -50,10 +50,6 @@ public class Controller {
     }
 
     public void search(ActionEvent event) throws IOException {
-        /*System.out.println("button pressed");
-        System.out.println(searchButton.getId());
-        System.out.println(searchField.getText());
-        */
 
         for ( int i = 0; i<similarTable.getItems().size(); i++) {
             similarTable.getItems().clear();
@@ -69,6 +65,45 @@ public class Controller {
                 System.out.println(y.toString());
             }
 
+            if (similarBusinesses.isEmpty()){
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("No Matches Found");
+                errorAlert.setContentText("There are no similar Businesses in the area");
+                errorAlert.showAndWait();
+            } else {
+                ObservableList<YelpData> data = FXCollections.observableArrayList(similarBusinesses);
+                similarName.setCellValueFactory(new PropertyValueFactory<>("name"));
+                similarCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+                similarCategories.setCellValueFactory(new PropertyValueFactory<>("categories"));
+                similarTable.getItems().addAll(data);
+            }
+
+
+
+        } else {
+            System.out.println("Business does not exist");
+
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("Input not valid");
+            errorAlert.setContentText("Business does not exist");
+            errorAlert.showAndWait();
+        }
+    }
+
+
+    public void findMostSimilar(ActionEvent e) {
+
+        for ( int i = 0; i<similarTable.getItems().size(); i++) {
+            similarTable.getItems().clear();
+        }
+
+        YelpData test = new YelpData(searchField.getText(), null, null, 0,0);
+        if (ht.contains(test,ht)){
+            System.out.println("ht contains this element!");
+
+            ArrayList<YelpData> similarBusinesses = new ArrayList<>();
+            similarBusinesses.add(Main.getMostSimilar(searchField.getText(),ht));
+
             ObservableList<YelpData> data = FXCollections.observableArrayList(similarBusinesses);
             similarName.setCellValueFactory(new PropertyValueFactory<>("name"));
             similarCity.setCellValueFactory(new PropertyValueFactory<>("city"));
@@ -83,6 +118,7 @@ public class Controller {
             errorAlert.setContentText("Business does not exist");
             errorAlert.showAndWait();
         }
+
     }
 
 
