@@ -11,4 +11,6 @@ searches, or can find a list of several similar businesses. For example, if a us
 in Charlotte, NC, the program will find the best match to Subway, which will be a sandwhich shop in close proximity to that 
 Subway.
 
-The file preview.png shows a working demo of the program
+image below shows a preview of the application.
+
+![alt text](https://raw.githubusercontent.com/cedrichansen/csc365hw01/master/preview.png)
